@@ -10,8 +10,26 @@ class StaffList extends Component {
     }
 
 
-    onSelectedStaff(staff){
-        this.setState({SelectedStaff: staff})
+    onSelectedStaff(staff) {
+        this.setState({ SelectedStaff: staff })
+    }
+
+    renderStaff(staff) {
+        if (staff != null)
+            return (
+                <ul>
+                    <li><h3>Họ và tên : {staff.name}</h3></li>
+                    <li>Ngày sinh : {staff.doB}</li>
+                    <li>Ngày vào công ty : {staff.startDate}</li>
+                    <li>Phòng ban : {staff.department.name}</li>
+                    <li>Số ngày nghỉ còn lại : {staff.annualLeave}</li>
+                    <li>Số ngày đã làm thêm : {staff.overTime}</li>
+                </ul>
+            )
+        else
+            return (
+                <div></div>
+            )
     }
 
     render() {
@@ -30,7 +48,7 @@ class StaffList extends Component {
                     {menu}
                 </div>
                 <div className='row'>
-                    
+                    {this.renderStaff(this.state.SelectedStaff)}
                 </div>
             </div>
         );
