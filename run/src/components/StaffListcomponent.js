@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import dateFormat from 'dateformat';
 class StaffList extends Component {
 
     constructor(props) {
@@ -19,8 +19,8 @@ class StaffList extends Component {
             return (
                 <ul>
                     <li><h3>Họ và tên : {staff.name}</h3></li>
-                    <li>Ngày sinh : {staff.doB}</li>
-                    <li>Ngày vào công ty : {staff.startDate}</li>
+                    <li>Ngày sinh : {dateFormat(staff.doB, "dd/mm/yyyy")}</li>
+                    <li>Ngày vào công ty : {dateFormat(staff.startDate, "dd/mm/yyyy")}</li>
                     <li>Phòng ban : {staff.department.name}</li>
                     <li>Số ngày nghỉ còn lại : {staff.annualLeave}</li>
                     <li>Số ngày đã làm thêm : {staff.overTime}</li>
