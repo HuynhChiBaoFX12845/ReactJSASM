@@ -6,7 +6,8 @@ import Header from './HeaderComponent';
 import StaffList from './StaffListComponent';
 import SalaryStaff from './SalaryStaff';
 import { STAFFS } from '../shared/staffs'
-import {Navbar, NavbarBrand} from 'reactstrap'
+import { ROLE } from '../shared/staffs';
+
 
 class Main extends Component {
     constructor(props) {
@@ -18,12 +19,8 @@ class Main extends Component {
     render() {
         return (
             <div>
-                <Navbar dark color="primary">
-                    <div className="container">
-                        <NavbarBrand href="/">Ứng dụng quản lý nhân sự v1.0</NavbarBrand>
-                    </div>
-                </Navbar>
-                <StaffList staffs={this.state.staffs} />
+                <Header/>
+                <Footer/>
             </div>
         );
     }
