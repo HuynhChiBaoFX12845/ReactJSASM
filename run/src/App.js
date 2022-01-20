@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
-import StaffList from './components/StaffListcomponent';
+import StaffList from './components/StaffListComponent';
 import { STAFFS } from './shared/staffs';
-import {Navbar, NavbarBrand} from 'reactstrap';
+import { Navbar, NavbarBrand } from 'reactstrap';
 
 class App extends Component {
-  
-  constructor(props){
+
+  constructor(props) {
     super(props);
     this.state = {
-      staffs : STAFFS
+      staffs: STAFFS
     }
   }
 
   render() {
     return (
+      
       <div>
         <Navbar dark color="primary">
           <div className="container">
@@ -22,6 +23,7 @@ class App extends Component {
         </Navbar>
         <StaffList staffs ={this.state.staffs}/>
       </div>
+      
     );
   }
 }
