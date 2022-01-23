@@ -12,7 +12,7 @@
 
 .footer{
   background-color: #e0dfe0;
-  margin:0px  auto;
+  margin:50px  auto;
   padding: 20px 0px 20px 0px;
 }
 .jumbotron {
@@ -27,7 +27,9 @@ address{
   margin:0px;
   color:#0f0f0f;
 }
-
+.navbar {
+  margin: 0px 0px 50px 0px;
+}
 .navbar-dark {
   color: white;
   background-color: black;

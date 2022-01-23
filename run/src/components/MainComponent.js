@@ -8,6 +8,7 @@ import StaffList from './StaffListComponent';
 import SalaryStaff from './SalaryStaff';
 import { STAFFS } from '../shared/staffs'
 import { ROLE } from '../shared/staffs';
+import { DEPARTMENTS } from '../shared/staffs'
 
 
 class Main extends Component {
@@ -15,7 +16,8 @@ class Main extends Component {
         super(props);
         this.state = {
             staffs: STAFFS,
-            roles: ROLE
+            roles: ROLE,
+            departments: DEPARTMENTS
         }
     }
     render() {
@@ -25,7 +27,7 @@ class Main extends Component {
                 <Header />
                 <Switch>
                     <Route exact path='/nhan-vien' component={() => <MenuStaff staffs ={this.state.staffs}/>} />
-                    <Route />
+                    <Route exact path='/phong-ban' component={()=> <DepartmentStaff departments = {this.state.departments}/> }/>
                     <Route />
                     <Redirect to='/nhan-vien' />
                 </Switch>
