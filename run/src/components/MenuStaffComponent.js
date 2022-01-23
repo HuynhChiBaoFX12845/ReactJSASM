@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card, CardImg, CardText, CardBody, Breadcrumb, BreadcrumbItem } from 'reactstrap';
-import {Link } from 'react-router-dom';
-function RenderCardStaff({ staff, onClick }) {
+
+function RenderCardStaff({ staff }) {
     return (
         <Card>
             <CardBody>
@@ -27,9 +27,6 @@ const MenuStaff = (props) => {
     return (
         <div className="container">
             <div className="row">
-                <Breadcrumb>
-                    <BreadcrumbItem>Nhân-viên</BreadcrumbItem>
-                </Breadcrumb>
                 <div className="col-12">
                     <h3>Danh sách nhân viên</h3>
                     <hr />

@@ -12,14 +12,8 @@
 
 .footer{
   background-color: #e0dfe0;
-  margin:50px  auto;
+  margin:50px 0px 0px 0px ;
   padding: 20px 0px 20px 0px;
-}
-.jumbotron {
-  padding:10px;
-  margin:0px auto;
-  background: #a9a9aa ;
-  color:floralwhite;
 }
 
 address{
@@ -34,4 +28,3 @@ address{
   color: white;
   background-color: black;
 }
-

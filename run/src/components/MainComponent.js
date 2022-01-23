@@ -28,7 +28,7 @@ class Main extends Component {
                 <Switch>
                     <Route exact path='/nhan-vien' component={() => <MenuStaff staffs ={this.state.staffs}/>} />
                     <Route exact path='/phong-ban' component={()=> <DepartmentStaff departments = {this.state.departments}/> }/>
-                    <Route />
+                    <Route exact path="/bang-luong" component={()=> <SalaryStaff staffs={this.state.staffs}/> }/>
                     <Redirect to='/nhan-vien' />
                 </Switch>
                 <Footer />
