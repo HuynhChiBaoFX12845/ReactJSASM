@@ -28,7 +28,7 @@ const MenuStaff = (props) => {
         <div className="container">
             <div className="row">
                 <Breadcrumb>
-                    <BreadcrumbItem><Link to="/nhan-vien">Nhân-Viên</Link></BreadcrumbItem>
+                    <BreadcrumbItem>Nhân-viên</BreadcrumbItem>
                 </Breadcrumb>
                 <div className="col-12">
                     <h3>Danh sách nhân viên</h3>
