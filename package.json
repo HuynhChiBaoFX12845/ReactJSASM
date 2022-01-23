@@ -3,6 +3,7 @@
     "@fortawesome/fontawesome-free": "^5.15.4",
     "bootstrap-social": "5.1.1",
     "dateformat": "^5.0.2",
-    "font-awesome": "4.7.0"
+    "font-awesome": "4.7.0",
+    "react-router-dom": "^6.2.1"
   }
 }

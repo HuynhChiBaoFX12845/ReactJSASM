@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import MenuStaff from './MenuStaffComponent';
 import DepartmentStaff from './DepartmentStaff';
 import Footer from './FooterComponent';
@@ -13,14 +14,22 @@ class Main extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            staffs: STAFFS
+            staffs: STAFFS,
+            roles: ROLE
         }
     }
     render() {
+
         return (
             <div>
-                <Header/>
-                <Footer/>
+                <Header />
+                <Switch>
+                    <Route exact path='/nhan-vien' component={() => <MenuStaff staffs ={this.state.staffs}/>} />
+                    <Route />
+                    <Route />
+                    <Redirect to='/nhan-vien' />
+                </Switch>
+                <Footer />
             </div>
         );
     }
