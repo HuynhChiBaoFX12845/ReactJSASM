@@ -7,7 +7,6 @@ import Header from './HeaderComponent';
 import StaffList from './StaffListComponent';
 import SalaryStaff from './SalaryStaffComponent';
 import { STAFFS } from '../shared/staffs'
-import { ROLE } from '../shared/staffs';
 import { DEPARTMENTS } from '../shared/staffs'
 
 
@@ -16,7 +15,6 @@ class Main extends Component {
         super(props);
         this.state = {
             staffs: STAFFS,
-            roles: ROLE,
             departments: DEPARTMENTS
         }
     }
