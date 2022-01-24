@@ -1,15 +1,18 @@
 import React from 'react'
 import { Card, CardImg, CardText, CardBody, Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 function RenderCardStaff({ staff }) {
     return (
         <Card>
-            <CardBody>
-            <CardImg src={staff.image} />
-                <CardText>
-                    {staff.name}
-                </CardText>
-            </CardBody>
+            <Link to={`nhan-vien/${staff.id}`}>
+                <CardBody>
+                    <CardImg src={staff.image} />
+                    <CardText>
+                        {staff.name}
+                    </CardText>
+                </CardBody>
+            </Link>
         </Card>
     );
 }
@@ -19,14 +22,17 @@ const MenuStaff = (props) => {
     const menu = props.staffs.map((staff) => {
         return (
             <div className='col-12 col-md-4 col-lg-3'>
-                <RenderCardStaff staff={staff}/>
+                <RenderCardStaff staff={staff} />
             </div>
         );
     });
-    
+
     return (
         <div className="container">
             <div className="row">
+                <Breadcrumb>
+                    <BreadcrumbItem active>Nhân-viên</BreadcrumbItem>
+                </Breadcrumb>
                 <div className="col-12">
                     <h3>Danh sách nhân viên</h3>
                     <hr />

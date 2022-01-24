@@ -1,60 +1,65 @@
-import React, { Component } from 'react';
+import React from 'react';
 import dateFormat from 'dateformat';
+import { CardImg, Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
+function RenderStaffList({ staff }) {
 
-class StaffList extends Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            SelectedStaff: null
-        }
-    }
-
-
-    onSelectedStaff(staff) {
-        this.setState({ SelectedStaff: staff })
-    }
-
-    renderStaff(staff) {
-        if (staff != null)
-            return (
-                <ul>
-                    <li><h3>Họ và tên : {staff.name}</h3></li>
-                    <li>Ngày sinh : {dateFormat(staff.doB, "dd/mm/yyyy")}</li>
-                    <li>Ngày vào công ty : {dateFormat(staff.startDate, "dd/mm/yyyy")}</li>
-                    <li>Phòng ban : {staff.department.name}</li>
-                    <li>Số ngày nghỉ còn lại : {staff.annualLeave}</li>
-                    <li>Số ngày đã làm thêm : {staff.overTime}</li>
-                </ul>
-            )
-        else
-            return (
-                <div></div>
-            )
-    }
-
-    render() {
-        const menu = this.props.staffs.map((staff) => {
-            return (
+    if (staff != null) {
+        return (
+            <div className='row'>
                 <div className='col-12 col-md-6 col-lg-4'>
-                    <ul key={staff.id} onClick={() => this.onSelectedStaff(staff)}>
-                        <li>{staff.name}</li>
+                    <CardImg src={staff.image} />
+                </div>
+                <div className='col-12 col-md-6 col-lg-4'>
+                    <ul>
+                        <li><h3>Họ và tên : {staff.name}</h3></li>
+                        <li>Ngày sinh : {dateFormat(staff.doB, "dd/mm/yyyy")}</li>
+                        <li>Ngày vào công ty : {dateFormat(staff.startDate, "dd/mm/yyyy")}</li>
+                        <li>Phòng ban : {staff.department.name}</li>
+                        <li>Số ngày nghỉ còn lại : {staff.annualLeave}</li>
+                        <li>Số ngày đã làm thêm : {staff.overTime}</li>
                     </ul>
                 </div>
-            )
-        });
+            </div>
+        )
+    } else {
         return (
-            <div>
+            <div></div>
+        )
+    }
+
+}
+const StaffList = (props) => {
+    if (props.staff != null)
+        return (
+            <div className='container'>
                 <div className='row'>
-                    {menu}
+                    <Breadcrumb>
+                        <BreadcrumbItem>
+                            <Link to='/nhan-vien'>Nhân viên</Link>
+                        </BreadcrumbItem>
+                        <BreadcrumbItem active>
+                            {props.staff.name}
+                        </BreadcrumbItem>
+                    </Breadcrumb>
+                    <div className='col-12'>
+                        <h3>{props.staff.name}</h3>
+                        <hr />
+                    </div>
                 </div>
                 <div className='row'>
-                    {this.renderStaff(this.state.SelectedStaff)}
+                    <div className='container'>
+                        <RenderStaffList staff={props.staff} />
+                    </div>
                 </div>
             </div>
-        );
-    }
-}
 
+
+        );
+    else
+        return (
+            <div></div>
+        )
+}
 export default StaffList;
